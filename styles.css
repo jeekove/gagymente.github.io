@@ -1,0 +1,448 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    @font-face {
+  font-family: 'normaltitle';
+  src: url('fonts/AlanSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.hero {
+  height: 100vh; /* csak egy képernyőnyi */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("home.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(0px);
+  transition: filter 0.5s ease; /* animált blur */
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.content h1,.content h2{
+  position: absolute;
+  width: 100%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#mainTitle {
+    font-family: 'normaltitle';
+  color: #fff;
+  font-size: 4rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3),
+               0 1px 3px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#subTitle {
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  width: 1500px;
+      font-family: 'normaltitle';
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3),
+               0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.discovery {
+  background: white;
+  position: relative;
+  z-index: 1; /* hogy mindig a hero alatt látszódjon */
+}
+.discovery-top {
+  position: absolute;   /* rögzítve a discovery tetejére */
+  top: -50px;           /* annyival húzod fel, amennyi az SVG magassága */
+  left: 0;
+  width: 100%;          /* mindig teljes szélesség */
+  height: 90px; 
+  z-index: -5;        /* az SVG viewBox magasságával arányos */
+}
+.discocont{
+      max-width: 1400px;
+    margin: auto;
+  padding-top: 100px;
+  font-family: normaltitle;
+  display: flex;
+}
+.discocont h1{
+  margin: 20px 0;
+  font-size: 30px;
+}
+.values{
+  max-width: 1400px;
+  margin: 100px auto;
+}
+.values h1{
+  font-family: normaltitle;
+  text-align: center;
+  font-size: 3rem;
+  padding: 30px 0;
+}
+.cubes{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  /* max-height: calc(2 * 200px + 20px);  töröld */
+  /* overflow: hidden;                      töröld */
+  padding: 100px 0;
+}
+
+.item{
+  /* width: 250px;  töröld */
+  width: 100%;
+  height: auto;
+}
+
+.infos{
+  max-width: 1400px;
+  margin: 100px auto;
+}
+.infos h1{
+  font-size: 2.5rem;
+  padding:20px 0;
+}
+.infos .right h1{
+  text-align: right;
+}
+.next {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.next h1 {
+  grid-column: 1 / -1; 
+  font-size: 3rem;
+  padding: 30px 0;
+}
+
+.next h2 {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.next h2:hover {
+  transform: translateY(-5px);
+  background: #eee;
+}
+
+.next h3 {
+  grid-column: 1 / -1;
+  margin: 30px 0;
+  font-size: 2.5rem;
+}
+.listen{
+  margin: 100px auto;
+  text-align: center;
+   background-color: antiquewhite;
+}
+.svgconfig{
+  height: 100px;
+}
+.svgconfigtwo{
+  position: relative;
+  height: 100px;
+  top: 5px;
+}
+.listen h1{
+  padding: 20px 0;
+  font-size: 3.4rem;
+}
+.listen h1{
+  font-size: 2.4rem;
+}
+.listen h3{
+  margin: 50px;
+}
+.listen a{
+ background-color: rgba(255, 254, 252, 0.822);
+ padding: 10px 30px;
+ font-size: 2.2rem;
+ color: black;
+}
+
+.villages {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.villagessvg{
+  z-index: 99;
+  height: 150px;
+  position: absolute;
+  margin-top: -1px;
+}
+.gallerys {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+
+.cubevillage {
+  min-width: 80%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  padding: 20% 0 0 200px;
+  color: white;
+    font-family: normaltitle;
+}
+.overlay h1{
+    padding: 0px 10px;
+  font-size: 4rem;
+}
+.overlay p{
+  padding: 10px;
+  font-size: 1.6rem;
+  width: 800px;
+}
+.overlay h2{
+  padding: 30px 10px;
+}
+.overlay a{
+  padding: 10px 30px;
+  border: 1px solid #fff;
+  color: #eee;
+  transition: all ease 0.2s;
+}
+.overlay a:hover{
+  padding: 10px 30px;
+  border: 1px solid #fff;
+  color: black;
+  background-color: #fff;
+}
+.villages button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.news{
+ text-align: center;
+ max-width: 1400px;
+ margin: 100px auto;
+ font-family: normaltitle;
+}
+.news h1{
+  font-size: 3rem;
+}
+.news .newscube{
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.new{
+  width: 500px;
+  height: 300px;
+  background-color: aliceblue;
+  border-radius: 30px;
+  padding: 30px;
+}
+.news h2{
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+
+
+
+@media (max-width: 1250px) {
+  #mainTitle {
+  font-size: 1.9rem;
+}
+
+#subTitle {
+  font-size: 1rem;
+  width: auto;
+  max-width: 500px;
+  margin: 0px 30px;
+}
+.discocont{
+  max-width: auto;
+  padding-top: 50px;
+  margin: auto  5vw;
+}
+.discocont h1{
+  font-size: 1.5rem;
+}
+.discocont h2{
+  font-size: 1.1rem;
+  text-align: justify;
+}
+.values{
+    max-width: auto;
+  padding-top: 50px;
+}
+.values h1{
+  font-size: 2rem;
+    padding: 0px 0;
+}
+.cubes{     
+    padding: 50px 0;
+  display: grid; 
+  margin: 0 auto ;  
+      width: 100%; 
+ grid-template-columns: repeat(2, minmax(0,1fr)); 
+}
+.item{
+    width: 100%; 
+  text-align: center;
+    text-align: center;
+}
+.item img{
+  width: 50px;
+}
+.item h2{
+  font-size: 1.2rem;
+  padding: 0 20px;
+}
+.infos{ 
+  max-width: auto ;
+  margin: 5vw;
+}
+.infos h1{
+  font-size: 1.8rem;
+  padding: 10px 0;
+}
+.infos h2{
+  font-size: 1.1rem;
+}
+.next {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 15px;
+  max-width: auto;
+  margin: 5vw;
+  text-align: center;
+}
+.next h1 {
+  font-size: 1.5rem;
+}
+
+.next h2 {
+  background: #f8f8f8;
+  font-size: 0.8rem;
+  padding: auto;
+
+}
+.next h3 {
+  font-size: 1.5rem;
+}
+.listen{
+  margin: 5vw auto;
+}
+.svgconfig{
+  height: 30px;
+}
+.svgconfigtwo{
+  height: 30px;
+}
+.listen h1{
+  padding: 10px 0;
+  font-size: 2rem;
+}
+.listen h2{
+  font-size: 1.2rem;
+}
+.listen a{
+font-size: 1.5rem;
+}
+.villages {
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+.villagessvg{
+  z-index: 99;
+  height: 50px;
+}
+.overlay {
+
+  padding: 30% 0 0 20px;
+}
+.overlay h1{
+    padding: 0px 10px;
+  font-size: 1.7rem;
+}
+.overlay p{
+  padding: 10px;
+  font-size: 1rem;
+  width: 200px;
+  height: 130px;
+}
+.overlay h2{
+  padding: 30px 10px;
+}
+.overlay a{
+  padding: 8px 20px;
+  border: 1px solid #fff;
+  color: #eee;
+  transition: all ease 0.2s;
+  font-size: 1rem;
+}
+.news{
+ text-align: center;
+ max-width: auto;
+ margin: 30px auto;
+ font-family: normaltitle;
+}
+.news h1{
+  font-size: 2rem;
+}
+.news .newscube{
+  display: block;
+  margin: 30px;
+
+}
+.new{
+  width: auto;
+  height: 200px;
+  margin: 20px 0px;
+  background-color: aliceblue;
+}
+.news h2{
+  font-size: 1.5rem;
+
+}
+}
